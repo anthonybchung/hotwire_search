@@ -1,0 +1,8 @@
+<h1> Project Search </h1>
+
+<h5> Load all projects to the front end (erb) and allow the frontend to hide the unwanted projects.</h5>
+
+<div data-controller = "projects">
+	<input type="search" class="border-violet-950 bg-violet-100" data-projects-target="searchField" data-action = "input->projects#search"/>
+	<%= render @projects %>
+</div>
