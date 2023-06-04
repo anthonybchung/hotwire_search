@@ -1,0 +1,24 @@
+<h1>Search filtering is done in the backend.</h1>
+
+<%= form_with url: method2s_path, method: :get, data: { turbo_frame: "projects", controller: "method2" } do |form| %>
+	<%= form.search_field :query, class: "border-2 border-violet-950 w-1/4", data: { action: "input->method2#search" } %>
+<% end %>
+
+<%= turbo_frame_tag "projects" do %>
+	<% unless @projects.empty? %>
+		<table class="m-5">
+			<tr class="border-violet-950 border-2">
+				<th class="border-violet-950 border-2">Name</th>
+				<th class="border-violet-950 border-2">Description</th>
+				<th class="border-violet-950 border-2">Category</th>
+			</tr>
+
+
+			<% @projects.each_with_index do |project, index| %>
+				<%= render partial: 'method2s/project', locals: { project: project, index: index } %>
+			<% end %>
+		</table>
+	<% else %>
+		<p>No such Project</p>
+	<% end %>
+<% end %>
