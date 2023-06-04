@@ -14,5 +14,5 @@ to find a project. Two methods will be illustrated here.
   - each time the input changes, view will submit a request to the controller.
   - view will only render the list of projects that is passed to it from the controller.
 
-![Logic in View](https://github.com/anthonybchung/hotwire_search/issues/1#issue-1740085707)
+![Logic in View](https://github.com/anthonybchung/hotwire_search/assets/99620815/1274487d-bebe-4360-9286-4309bde8d35f)
 
