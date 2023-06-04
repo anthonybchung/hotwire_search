@@ -44,6 +44,56 @@ end
 
 Then use stimulus to hide(ie "display:none") the unwanted data.
 
+# Method 2
+Pass the query search to the backend.
+
+View: 
+
+```erbruby
+<%= form_with url: method2s_path, method: :get, data: { turbo_frame: "projects", controller: "method2" } do |form| %>
+	<%= form.search_field :query, class: "border-2 border-violet-950 w-1/4", data: { action: "input->method2#search" } %>
+<% end %>
+
+<%= turbo_frame_tag "projects" do %>
+	<% unless @projects.empty? %>
+		<table class="m-5">
+			<tr class="border-violet-950 border-2">
+				<th class="border-violet-950 border-2">Name</th>
+				<th class="border-violet-950 border-2">Description</th>
+				<th class="border-violet-950 border-2">Category</th>
+			</tr>
+
+
+			<% @projects.each_with_index do |project, index| %>
+				<%= render partial: 'method2s/project', locals: { project: project, index: index } %>
+			<% end %>
+		</table>
+	<% else %>
+		<p>No such Project</p>
+	<% end %>
+<% end %>
+```
+
+All the stimulus has to do is to submit the form as the input changes.
+
+```javascript
+ search(){
+    this.element.requestSubmit()
+  }
+```
+
+the business logic is placed in the backend.
+
+```ruby
+def index
+    if params[:query].nil?
+      @projects = Project.all
+    else
+      @projects = Project.where("LOWER(name) LIKE ?", "%#{params[:query].downcase}%")
+    end
+  end
+```
+
 
 
 
