@@ -16,5 +16,5 @@ to find a project. Two methods will be illustrated here.
   - each time the input changes, view will submit a request to the controller.
   - view will only render the list of projects that is passed to it from the controller.
 
-
+![Project-BackEnd](https://github.com/anthonybchung/hotwire_search/assets/99620815/a5c666bd-7676-45f7-9484-d37c1d270b4d)
 
