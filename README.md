@@ -1,24 +1,19 @@
 # README
+This small exercise uses
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- **turbo-frame:** Single Page Application effect
+- **stimulus:** render a list of projects on the search page.
 
-Things you may want to cover:
+to find a project. Two methods will be illustrated here.
 
-* Ruby version
+- method 1 (logic in the frontend):
+    - rails will retrieve all projects and pass it to the view.
+    - the view will be responsible for filtering out the unwanted projects.
+  
+- method 2 (logic in the backend):
+  - each time the input changes, view will submit a request to the controller.
+  - view will only render the list of projects that is passed to it from the controller.
 
-* System dependencies
 
-* Configuration
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
