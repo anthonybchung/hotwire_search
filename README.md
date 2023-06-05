@@ -33,7 +33,7 @@ No validation will be coded because this exercise is to demonstrate Rails erb us
 
 Populate the table data from seeds.rb
 
-# Method 1
+# Method 1: localhost:3000/projects/
 
 Pass all the projects from the database to the view. 
 ```
@@ -44,7 +44,7 @@ end
 
 Then use stimulus to hide(ie "display:none") the unwanted data.
 
-# Method 2
+# Method 2: localhost:3000/method2s/
 Pass the query search to the backend.
 
 View: 
@@ -93,6 +93,10 @@ def index
     end
   end
 ```
+
+# Conclusion
+
+This exercise demonstrates method 2 stimulus is far easier to build/code. 
 
 
 
